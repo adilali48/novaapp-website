@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech - Home</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#7c3aed'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">
+                    N
+                </div>
+                <span class="text-xl font-bold text-gray-900">NovaTech</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="signin.html"
+                   class="px-4 py-2 text-gray-700 hover:text-indigo-600 font-medium">
+                    Sign In
+                </a>
+                <a href="signup.html"
+                   class="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                    Sign Up
+                </a>
+            </div>
+
+            <button id="mobile-menu-button"
+                    class="md:hidden p-2 rounded-lg hover:bg-gray-100"
+                    aria-label="Open menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+            <a href="signin.html" class="mobile-link">Sign In</a>
+            <a href="signup.html" class="mobile-link">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <div>
+                <span class="inline-block px-4 py-2 mb-6 rounded-full bg-indigo-100 text-indigo-700 font-semibold text-sm">
+                    🚀 Build Something Amazing
+                </span>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                    Build the future with
+                    <span class="gradient-text">NovaTech</span>
+                </h1>
+
+                <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-xl">
+                    A modern digital platform designed to help businesses create,
+                    collaborate, and grow with powerful technology.
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="signup.html"
+                       class="text-center px-7 py-3.5 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg">
+                        Get Started
+                    </a>
+
+                    <a href="about.html"
+                       class="text-center px-7 py-3.5 bg-white text-gray-800 rounded-lg font-semibold border border-gray-300 hover:bg-gray-100 transition">
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="flex -space-x-3">
+                        <div class="avatar bg-blue-500">A</div>
+                        <div class="avatar bg-purple-500">S</div>
+                        <div class="avatar bg-green-500">M</div>
+                        <div class="avatar bg-pink-500">J</div>
+                    </div>
+                    <p class="text-sm text-gray-600">
+                        Trusted by <strong>10,000+</strong> users
+                    </p>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="bg-white rounded-2xl shadow-2xl p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <p class="text-sm text-gray-500">Total Revenue</p>
+                            <h3 class="text-3xl font-bold">$84,250</h3>
+                        </div>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+                            +24.5%
+                        </span>
+                    </div>
+
+                    <div class="h-48 flex items-end gap-3">
+                        <div class="chart-bar h-20"></div>
+                        <div class="chart-bar h-28"></div>
+                        <div class="chart-bar h-24"></div>
+                        <div class="chart-bar h-36"></div>
+                        <div class="chart-bar h-32"></div>
+                        <div class="chart-bar h-44"></div>
+                        <div class="chart-bar h-40"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 1: FEATURES -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="section-label">Features</span>
+            <h2 class="section-title">Everything you need to grow</h2>
+            <p class="section-description">
+                Powerful tools designed to simplify your workflow and improve productivity.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card">
+                <div class="icon-box bg-indigo-100 text-indigo-600">⚡</div>
+                <h3>Fast Performance</h3>
+                <p>Enjoy a fast, reliable and responsive experience across all devices.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box bg-green-100 text-green-600">🔒</div>
+                <h3>Secure Platform</h3>
+                <p>Your information is protected with modern security practices.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box bg-purple-100 text-purple-600">📊</div>
+                <h3>Smart Analytics</h3>
+                <p>Understand your performance using clear and useful analytics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 2: STATISTICS -->
+<section class="py-16 bg-indigo-600 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="stat-number">10K+</div>
+                <p class="text-indigo-200">Active Users</p>
+            </div>
+            <div>
+                <div class="stat-number">99.9%</div>
+                <p class="text-indigo-200">Uptime</p>
+            </div>
+            <div>
+                <div class="stat-number">50+</div>
+                <p class="text-indigo-200">Countries</p>
+            </div>
+            <div>
+                <div class="stat-number">24/7</div>
+                <p class="text-indigo-200">Support</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 3: SERVICES -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">Services</span>
+            <h2 class="section-title">Solutions for modern businesses</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="service-card">
+                <span>💻</span>
+                <h3>Web Development</h3>
+                <p>Modern responsive websites built for performance and usability.</p>
+                <a href="contact.html">Learn more →</a>
+            </div>
+
+            <div class="service-card">
+                <span>🎨</span>
+                <h3>UI/UX Design</h3>
+                <p>Beautiful user experiences that keep your customers engaged.</p>
+                <a href="contact.html">Learn more →</a>
+            </div>
+
+            <div class="service-card">
+                <span>☁️</span>
+                <h3>Cloud Solutions</h3>
+                <p>Scalable cloud solutions that grow alongside your business.</p>
+                <a href="contact.html">Learn more →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 4: PROCESS -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">How It Works</span>
+            <h2 class="section-title">Simple three-step process</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="process-card">
+                <div class="process-number">1</div>
+                <h3>Choose a Plan</h3>
+                <p>Select the solution that matches your business requirements.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">2</div>
+                <h3>Get Started</h3>
+                <p>Create your account and configure your workspace.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">3</div>
+                <h3>Grow</h3>
+                <p>Use our tools to improve productivity and achieve your goals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 5: TESTIMONIALS -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">Testimonials</span>
+            <h2 class="section-title">What our users say</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="testimonial-card">
+                <div class="text-yellow-400 text-xl">★★★★★</div>
+                <p>"NovaTech completely changed how our team manages projects."</p>
+                <div class="testimonial-user">
+                    <div class="avatar bg-indigo-500">A</div>
+                    <div>
+                        <strong>Ahmed Khan</strong>
+                        <small>Product Manager</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="text-yellow-400 text-xl">★★★★★</div>
+                <p>"The interface is simple, beautiful and incredibly easy to use."</p>
+                <div class="testimonial-user">
+                    <div class="avatar bg-pink-500">S</div>
+                    <div>
+                        <strong>Sarah Ali</strong>
+                        <small>Designer</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="text-yellow-400 text-xl">★★★★★</div>
+                <p>"Excellent support and a very powerful set of business tools."</p>
+                <div class="testimonial-user">
+                    <div class="avatar bg-green-500">M</div>
+                    <div>
+                        <strong>Michael Lee</strong>
+                        <small>Founder</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 6: PRICING -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">Pricing</span>
+            <h2 class="section-title">Simple pricing</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$0 <span>/month</span></div>
+                <p>For individuals getting started.</p>
+                <a href="signup.html">Get Started</a>
+            </div>
+
+            <div class="pricing-card popular">
+                <span class="popular-label">Popular</span>
+                <h3>Professional</h3>
+                <div class="price">$29 <span>/month</span></div>
+                <p>For growing teams and businesses.</p>
+                <a href="signup.html">Start Free Trial</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">$99 <span>/month</span></div>
+                <p>For organizations with advanced needs.</p>
+                <a href="contact.html">Contact Sales</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 7: FAQ -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">Frequently asked questions</h2>
+        </div>
+
+        <div class="space-y-4">
+            <details class="faq">
+                <summary>What is NovaTech?</summary>
+                <p>NovaTech is a digital platform providing modern tools for businesses and teams.</p>
+            </details>
+
+            <details class="faq">
+                <summary>Can I start for free?</summary>
+                <p>Yes. You can create a free account using our Starter plan.</p>
+            </details>
+
+            <details class="faq">
+                <summary>Is customer support available?</summary>
+                <p>Yes. Our support team is available around the clock.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 8: TEAM -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">Our Team</span>
+            <h2 class="section-title">Meet the people behind NovaTech</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="team-card">
+                <div class="team-avatar bg-indigo-500">AK</div>
+                <h3>Ali Khan</h3>
+                <p>CEO & Founder</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar bg-purple-500">SA</div>
+                <h3>Sarah Ahmed</h3>
+                <p>Creative Director</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar bg-green-500">ML</div>
+                <h3>Michael Lee</h3>
+                <p>Lead Developer</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-avatar bg-pink-500">JM</div>
+                <h3>Jessica Miller</h3>
+                <p>Marketing Lead</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 9: NEWSLETTER -->
+<section class="py-16 bg-indigo-50">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">Stay in the loop</h2>
+        <p class="mt-3 text-gray-600">Subscribe for product updates and useful resources.</p>
+
+        <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+            <input type="email"
+                   placeholder="Your email address"
+                   required
+                   class="flex-1 px-5 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500">
+            <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+                Subscribe
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- COMPONENT 10: CTA -->
+<section class="py-20 bg-gray-900 text-white">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold">Ready to build something great?</h2>
+        <p class="mt-4 text-gray-400">
+            Join thousands of users building better digital experiences.
+        </p>
+        <a href="signup.html"
+           class="inline-block mt-8 px-8 py-4 bg-indigo-600 rounded-lg font-semibold hover:bg-indigo-700">
+            Create Your Account
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-4 gap-10">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-9 h-9 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">N</div>
+                    <span class="text-xl font-bold text-white">NovaTech</span>
+                </div>
+                <p class="text-gray-400">
+                    Building digital experiences for the modern world.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Company</h3>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Account</h3>
+                <a href="signup.html">Sign Up</a>
+                <a href="signin.html">Sign In</a>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Follow Us</h3>
+                <div class="flex gap-4 mt-4">
+                    <span>Facebook</span>
+                    <span>Twitter</span>
+                    <span>LinkedIn</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
+            © 2026 NovaTech. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

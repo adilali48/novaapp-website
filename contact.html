@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech - Contact</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white border-b sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">N</div>
+                <span class="text-xl font-bold">NovaTech</span>
+            </a>
+
+            <div class="hidden md:flex gap-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+
+            <div class="hidden md:flex gap-3 items-center">
+                <a href="signin.html" class="px-4 py-2">Sign In</a>
+                <a href="signup.html" class="px-5 py-2.5 bg-indigo-600 text-white rounded-lg">Sign Up</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden p-2">☰</button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+            <a href="signin.html" class="mobile-link">Sign In</a>
+            <a href="signup.html" class="mobile-link">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<section class="bg-indigo-600 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold">Contact Us</h1>
+        <p class="mt-5 text-indigo-100 text-lg">
+            We'd love to hear from you. Send us a message.
+        </p>
+    </div>
+</section>
+
+<!-- COMPONENTS -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <!-- Contact cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>hello@novatech.example</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Phone</h3>
+                <p>+92 300 1234567</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Location</h3>
+                <p>Karachi, Pakistan</p>
+            </div>
+
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+
+            <!-- FORM -->
+            <div class="bg-white rounded-2xl shadow-sm border p-8">
+
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900">Send us a message</h2>
+                    <p class="mt-2 text-gray-500">
+                        Complete the form and our team will get back to you.
+                    </p>
+                </div>
+
+                <form
+                    id="contact-form"
+                    action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                    method="POST"
+                    novalidate>
+
+                    <div class="mb-5">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            placeholder="John Doe"
+                            required
+                            minlength="2">
+                        <p class="error-message" id="name-error"></p>
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="john@example.com"
+                            required>
+                        <p class="error-message" id="email-error"></p>
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="subject" class="form-label">Subject *</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            class="form-input"
+                            placeholder="How can we help?"
+                            required
+                            minlength="3">
+                        <p class="error-message" id="subject-error"></p>
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            class="form-input"
+                            placeholder="Write your message..."
+                            required
+                            minlength="10"></textarea>
+                        <p class="error-message" id="message-error"></p>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="New NovaTech Contact Message">
+
+                    <button
+                        type="submit"
+                        class="w-full px-6 py-3.5 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">
+                        Send Message
+                    </button>
+
+                    <div id="form-success"
+                         class="hidden mt-5 p-4 rounded-lg bg-green-100 text-green-800">
+                        Your message has been submitted successfully.
+                    </div>
+                </form>
+            </div>
+
+            <!-- INFORMATION -->
+            <div class="space-y-6">
+
+                <div class="bg-indigo-50 rounded-2xl p-8">
+                    <h2 class="text-2xl font-bold">Let's work together</h2>
+                    <p class="mt-4 text-gray-600 leading-7">
+                        Whether you have a question, need technical assistance,
+                        or want to discuss a project, our team is ready to help.
+                    </p>
+                </div>
+
+                <div class="bg-white border rounded-2xl p-8">
+                    <h3 class="text-xl font-bold">Business Hours</h3>
+
+                    <div class="mt-5 space-y-4">
+                        <div class="flex justify-between border-b pb-3">
+                            <span>Monday - Friday</span>
+                            <strong>9:00 AM - 6:00 PM</strong>
+                        </div>
+
+                        <div class="flex justify-between border-b pb-3">
+                            <span>Saturday</span>
+                            <strong>10:00 AM - 3:00 PM</strong>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span>Sunday</span>
+                            <strong>Closed</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ / Flowbite-style accordion -->
+                <div id="accordion-contact" data-accordion="collapse">
+
+                    <h2 id="accordion-heading-1">
+                        <button type="button"
+                                class="flex items-center justify-between w-full p-5 font-medium bg-white border rounded-t-xl"
+                                data-accordion-target="#accordion-body-1"
+                                aria-expanded="false"
+                                aria-controls="accordion-body-1">
+                            <span>How quickly will you respond?</span>
+                            <span>+</span>
+                        </button>
+                    </h2>
+
+                    <div id="accordion-body-1" class="hidden" aria-labelledby="accordion-heading-1">
+                        <div class="p-5 bg-white border border-t-0">
+                            <p class="text-gray-600">
+                                We normally respond to inquiries within one business day.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 id="accordion-heading-2">
+                        <button type="button"
+                                class="flex items-center justify-between w-full p-5 font-medium bg-white border border-t-0"
+                                data-accordion-target="#accordion-body-2"
+                                aria-expanded="false"
+                                aria-controls="accordion-body-2">
+                            <span>Can I request a custom solution?</span>
+                            <span>+</span>
+                        </button>
+                    </h2>
+
+                    <div id="accordion-body-2" class="hidden" aria-labelledby="accordion-heading-2">
+                        <div class="p-5 bg-white border border-t-0">
+                            <p class="text-gray-600">
+                                Yes. Contact our team and describe your requirements.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-gray-900 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold">Have a project in mind?</h2>
+        <p class="mt-3 text-gray-400">Let's turn your idea into reality.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-3 gap-10">
+            <div>
+                <h3 class="text-xl font-bold text-white">NovaTech</h3>
+                <p class="mt-3 text-gray-400">
+                    Modern technology for modern businesses.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Navigation</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="

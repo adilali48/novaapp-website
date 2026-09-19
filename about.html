@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech - About</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">N</div>
+                <span class="text-xl font-bold text-gray-900">NovaTech</span>
+            </a>
+
+            <div class="hidden md:flex gap-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="signin.html" class="px-4 py-2 font-medium">Sign In</a>
+                <a href="signup.html" class="px-5 py-2.5 bg-indigo-600 text-white rounded-lg">Sign Up</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden p-2">
+                ☰
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+            <a href="signin.html" class="mobile-link">Sign In</a>
+            <a href="signup.html" class="mobile-link">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="bg-indigo-600 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold">About NovaTech</h1>
+        <p class="mt-5 text-indigo-100 text-lg max-w-2xl mx-auto">
+            We create technology that helps people and businesses achieve more.
+        </p>
+    </div>
+</section>
+
+<!-- COMPONENT 1: INTRO -->
+<section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="section-label">Who We Are</span>
+            <h2 class="section-title text-left">Technology with a purpose</h2>
+            <p class="text-gray-600 leading-8 mt-5">
+                NovaTech is a technology company focused on creating accessible,
+                reliable and innovative digital products.
+            </p>
+            <p class="text-gray-600 leading-8 mt-4">
+                Our mission is to simplify complex technology and provide businesses
+                with tools that allow them to focus on what matters most.
+            </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-10 text-white shadow-xl">
+            <div class="text-6xl mb-5">🚀</div>
+            <h3 class="text-2xl font-bold">Our Mission</h3>
+            <p class="mt-4 text-indigo-100">
+                Make modern technology simple, useful and accessible to everyone.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 2: STATISTICS -->
+<section class="py-16 bg-white border-y">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold text-indigo-600">10K+</div>
+                <p class="mt-2 text-gray-500">Customers</p>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-indigo-600">50+</div>
+                <p class="mt-2 text-gray-500">Countries</p>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-indigo-600">25+</div>
+                <p class="mt-2 text-gray-500">Products</p>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-indigo-600">99.9%</div>
+                <p class="mt-2 text-gray-500">Reliability</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 3: TIMELINE -->
+<section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-14">
+            <span class="section-label">Our Journey</span>
+            <h2 class="section-title">The NovaTech story</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span>2021</span>
+                <h3>NovaTech Founded</h3>
+                <p>Our team came together with a vision to simplify digital technology.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span>2022</span>
+                <h3>First Product Launch</h3>
+                <p>We launched our first platform for small businesses.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span>2024</span>
+                <h3>Global Expansion</h3>
+                <p>NovaTech expanded its services to customers around the world.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span>2026</span>
+                <h3>Building the Future</h3>
+                <p>We continue developing innovative tools for modern businesses.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 4: TEAM -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">Our Team</span>
+            <h2 class="section-title">Meet our leadership</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="team-card bg-white">
+                <div class="team-avatar bg-indigo-500">AK</div>
+                <h3>Ali Khan</h3>
+                <p>Chief Executive Officer</p>
+            </div>
+
+            <div class="team-card bg-white">
+                <div class="team-avatar bg-purple-500">SA</div>
+                <h3>Sarah Ahmed</h3>
+                <p>Creative Director</p>
+            </div>
+
+            <div class="team-card bg-white">
+                <div class="team-avatar bg-green-500">ML</div>
+                <h3>Michael Lee</h3>
+                <p>Technology Lead</p>
+            </div>
+
+            <div class="team-card bg-white">
+                <div class="team-avatar bg-pink-500">JM</div>
+                <h3>Jessica Miller</h3>
+                <p>Marketing Director</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 5: TESTIMONIAL -->
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <span class="section-label">Testimonial</span>
+
+        <div class="mt-8 bg-gray-50 rounded-2xl p-10 shadow-sm">
+            <div class="text-5xl text-indigo-600">“</div>
+
+            <p class="text-2xl text-gray-700 leading-relaxed">
+                NovaTech helped our team turn a complicated workflow into a simple,
+                organized and productive process.
+            </p>
+
+            <div class="mt-8">
+                <div class="team-avatar bg-indigo-500 mx-auto">AK</div>
+                <h3 class="mt-4 font-bold">Ahmed Khan</h3>
+                <p class="text-gray-500">Business Owner</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENT 6: ACCORDION -->
+<section class="py-20">
+    <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="section-label">FAQ</span>
+            <h2 class="section-title">More about us</h2>
+        </div>
+
+        <div class="space-y-4">
+            <details class="faq">
+                <summary>What does NovaTech do?</summary>
+                <p>We create digital products and technology solutions for individuals and businesses.</p>
+            </details>
+
+            <details class="faq">
+                <summary>Where is NovaTech available?</summary>
+                <p>Our digital services can be accessed by customers around the world.</p>
+            </details>
+
+            <details class="faq">
+                <summary>How can I contact your team?</summary>
+                <p>You can contact us using the Contact page and our online form.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-4 gap-10">
+            <div>
+                <h3 class="text-xl font-bold text-white">NovaTech</h3>
+                <p class="mt-4 text-gray-400">
+                    Technology for a better digital future.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Pages</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Account</h3>
+                <a href="signup.html">Sign Up</a>
+                <a href="signin.html">Sign In</a>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Contact</h3>
+                <p>hello@novatech.example</p>
+                <p class="mt-2">+92 300 1234567</p>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+            © 2026 NovaTech. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

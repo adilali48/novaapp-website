@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | NovaApp</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex justify-between items-center h-16">
+
+                <a href="index.html"
+                   class="text-2xl font-bold text-indigo-600">
+                    NovaApp
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+
+                    <a href="signup.html"
+                       class="bg-indigo-600 text-white px-5 py-2 rounded-lg">
+                        Sign Up
+                    </a>
+
+                    <a href="signin.html"
+                       class="text-indigo-600 font-medium hover:text-indigo-800">
+                        Sign In
+                    </a>
+                </div>
+
+                <button id="mobileMenuBtn"
+                        class="md:hidden text-gray-700 text-2xl"
+                        aria-label="Open menu">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="mobile-link">Home</a>
+                <a href="about.html" class="mobile-link">About</a>
+                <a href="contact.html" class="mobile-link">Contact</a>
+                <a href="signup.html" class="mobile-link">Sign Up</a>
+                <a href="signin.html" class="mobile-link">Sign In</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Sign Up -->
+    <main class="py-12 px-4">
+
+        <div class="max-w-5xl mx-auto">
+
+            <div class="text-center mb-10">
+                <span class="inline-block bg-indigo-100 text-indigo-600
+                             px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Get Started
+                </span>
+
+                <h1 class="text-4xl font-bold text-gray-900">
+                    Create Your Account
+                </h1>
+
+                <p class="text-gray-500 mt-3">
+                    Join NovaApp and start your journey today.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+
+                <!-- Benefits Component -->
+                <div class="bg-indigo-600 text-white rounded-2xl p-8 shadow-lg">
+
+                    <h2 class="text-2xl font-bold mb-6">
+                        Why Join NovaApp?
+                    </h2>
+
+                    <div class="space-y-6">
+
+                        <div class="flex gap-4">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h3 class="font-semibold">Easy to Use</h3>
+                                <p class="text-indigo-100 text-sm mt-1">
+                                    Simple and user-friendly platform.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h3 class="font-semibold">Secure</h3>
+                                <p class="text-indigo-100 text-sm mt-1">
+                                    Your account information stays protected.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h3 class="font-semibold">Powerful Features</h3>
+                                <p class="text-indigo-100 text-sm mt-1">
+                                    Everything you need in one place.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-10 border-t border-indigo-400 pt-6">
+                        <p class="text-indigo-100 text-sm">
+                            Already have an account?
+                        </p>
+
+                        <a href="signin.html"
+                           class="inline-block mt-2 bg-white text-indigo-600
+                                  px-5 py-2 rounded-lg font-semibold
+                                  hover:bg-indigo-50 transition">
+                            Sign In
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border">
+
+                    <form id="signupForm" novalidate>
+
+                        <!-- Name -->
+                        <div class="mb-5">
+                            <label for="fullName"
+                                   class="form-label">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="John Doe"
+                                class="form-input"
+                                required
+                                minlength="3"
+                            >
+
+                            <p id="nameError"
+                               class="error-message"></p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-5">
+                            <label for="signupEmail"
+                                   class="form-label">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="signupEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                class="form-input"
+                                required
+                            >
+
+                            <p id="signupEmailError"
+                               class="error-message"></p>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-5">
+                            <label for="phone"
+                                   class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+92 300 1234567"
+                                class="form-input"
+                            >
+
+                            <p id="phoneError"
+                               class="error-message"></p>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-5">
+                            <label for="signupPassword"
+                                   class="form-label">
+                                Password
+                            </label>
+
+                            <div class="relative">
+                                <input
+                                    type="password"
+                                    id="signupPassword"
+                                    name="password"
+                                    placeholder="Minimum 6 characters"
+                                    class="form-input pr-12"
+                                    required
+                                    minlength="6"
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="signupPassword">
+                                    👁
+                                </button>
+                            </div>
+
+                            <p id="signupPasswordError"
+                               class="error-message"></p>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-5">
+                            <label for="confirmPassword"
+                                   class="form-label">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Repeat your password"
+                                class="form-input"
+                                required
+                            >
+
+                            <p id="confirmPasswordError"
+                               class="error-message"></p>
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="flex items-start mb-6">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                class="mt-1 w-4 h-4 text-indigo-600
+                                       border-gray-300 rounded"
+                                required
+                            >
+
+                            <label for="terms"
+                                   class="ml-2 text-sm text-gray-600">
+                                I agree to the
+                                <a href="#" class="text-indigo-600 hover:underline">
+                                    Terms & Conditions
+                                </a>.
+                            </label>
+                        </div>
+
+                        <!-- Submit -->
+                        <button
+                            type="submit"
+                            class="w-full bg-indigo-600 hover:bg-indigo-700
+                                   text-white font-semibold py-3 rounded-lg
+                                   transition">
+                            Create Account
+                        </button>
+
+                        <p id="signupSuccess"
+                           class="success-message">
+                        </p>
+
+                    </form>
+
+                    <!-- Required Message -->
+                    <div class="text-center mt-6 pt-6 border-t">
+                        <p class="text-gray-600 text-sm">
+                            Already have an account?
+                            <a href="signin.html"
+                               class="text-indigo-600 font-semibold hover:underline">
+                                Sign in.
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 py-6 text-center">
+            <p>© 2026 NovaApp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
