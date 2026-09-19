@@ -4,26 +4,33 @@
 
    document.addEventListener("DOMContentLoaded", function () {
 
+
     /* =========================================
        PAGE LOADER
-       ========================================= */
+    ========================================= */
 
-    const loader = document.querySelector(".page-loader");
+    const loader =
+        document.querySelector(".page-loader");
 
     if (loader) {
+
         window.addEventListener("load", function () {
 
             setTimeout(function () {
+
                 loader.classList.add("hide");
+
             }, 400);
 
         });
+
     }
+
 
 
     /* =========================================
        MOBILE MENU
-       ========================================= */
+    ========================================= */
 
     const mobileMenuBtn =
         document.getElementById("mobileMenuBtn");
@@ -31,173 +38,499 @@
     const mobileMenu =
         document.getElementById("mobileMenu");
 
+
     if (mobileMenuBtn && mobileMenu) {
 
-        mobileMenuBtn.addEventListener("click", function () {
+        mobileMenuBtn.addEventListener(
+            "click",
+            function () {
 
-            mobileMenu.classList.toggle("hidden");
-
-            if (!mobileMenu.classList.contains("hidden")) {
-
-                mobileMenu.style.animation =
-                    "fadeUp 0.35s ease-out";
+                mobileMenu.classList.toggle(
+                    "hidden"
+                );
 
             }
+        );
 
-        });
     }
+
 
 
     /* =========================================
        PASSWORD SHOW / HIDE
-       ========================================= */
+    ========================================= */
 
     const passwordButtons =
-        document.querySelectorAll(".password-toggle");
+        document.querySelectorAll(
+            ".password-toggle"
+        );
+
 
     passwordButtons.forEach(function (button) {
 
-        button.addEventListener("click", function () {
+        button.addEventListener(
+            "click",
+            function () {
 
-            const targetId =
-                button.getAttribute("data-target");
+                const targetId =
+                    button.getAttribute(
+                        "data-target"
+                    );
 
-            const input =
-                document.getElementById(targetId);
+                const input =
+                    document.getElementById(
+                        targetId
+                    );
 
-            if (!input) return;
 
-            if (input.type === "password") {
+                if (!input) {
+                    return;
+                }
 
-                input.type = "text";
 
-                button.textContent = "🙈";
+                if (
+                    input.type === "password"
+                ) {
 
-            } else {
+                    input.type = "text";
 
-                input.type = "password";
+                    button.textContent = "🙈";
 
-                button.textContent = "👁";
+                } else {
+
+                    input.type = "password";
+
+                    button.textContent = "👁";
+
+                }
 
             }
-
-        });
+        );
 
     });
 
 
+
     /* =========================================
-       SCROLL REVEAL ANIMATION
-       ========================================= */
+       SCROLL REVEAL
+    ========================================= */
 
     const revealElements =
         document.querySelectorAll(
             ".reveal, .reveal-left, .reveal-right"
         );
 
-    const revealObserver =
-        new IntersectionObserver(
-            function (entries) {
 
-                entries.forEach(function (entry) {
+    if (
+        revealElements.length > 0 &&
+        "IntersectionObserver" in window
+    ) {
 
-                    if (entry.isIntersecting) {
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries) {
 
-                        entry.target.classList.add("active");
+                    entries.forEach(
+                        function (entry) {
 
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-                    }
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                });
+                                entry.target.classList.add(
+                                    "active"
+                                );
 
-            },
-            {
-                threshold: 0.15
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                revealObserver.observe(
+                    element
+                );
+
             }
         );
 
+    } else {
 
-    revealElements.forEach(function (element) {
+        revealElements.forEach(
+            function (element) {
 
-        revealObserver.observe(element);
+                element.classList.add(
+                    "active"
+                );
 
-    });
+            }
+        );
+
+    }
+
 
 
     /* =========================================
        COUNTER ANIMATION
-       ========================================= */
+    ========================================= */
 
     const counters =
-        document.querySelectorAll("[data-counter]");
-
-    const counterObserver =
-        new IntersectionObserver(
-            function (entries) {
-
-                entries.forEach(function (entry) {
-
-                    if (!entry.isIntersecting) return;
-
-                    const counter =
-                        entry.target;
-
-                    const target =
-                        parseInt(
-                            counter.dataset.counter
-                        );
-
-                    let current = 0;
-
-                    const increment =
-                        Math.max(
-                            1,
-                            Math.ceil(target / 80)
-                        );
-
-                    const timer =
-                        setInterval(function () {
-
-                            current += increment;
-
-                            if (current >= target) {
-
-                                current = target;
-
-                                clearInterval(timer);
-                            }
-
-                            counter.textContent =
-                                current.toLocaleString();
-
-                        }, 20);
-
-                    counterObserver.unobserve(counter);
-
-                });
-
-            },
-            {
-                threshold: 0.6
-            }
+        document.querySelectorAll(
+            "[data-counter]"
         );
 
 
-    counters.forEach(function (counter) {
+    if (counters.length > 0) {
 
-        counterObserver.observe(counter);
+        const counterObserver =
+            new IntersectionObserver(
+                function (entries) {
 
-    });
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                !entry.isIntersecting
+                            ) {
+                                return;
+                            }
+
+
+                            const counter =
+                                entry.target;
+
+
+                            const target =
+                                parseInt(
+                                    counter.dataset.counter
+                                ) || 0;
+
+
+                            let current = 0;
+
+
+                            const increment =
+                                Math.max(
+                                    1,
+                                    Math.ceil(
+                                        target / 80
+                                    )
+                                );
+
+
+                            const timer =
+                                setInterval(
+                                    function () {
+
+                                        current +=
+                                            increment;
+
+
+                                        if (
+                                            current >=
+                                            target
+                                        ) {
+
+                                            current =
+                                                target;
+
+                                            clearInterval(
+                                                timer
+                                            );
+
+                                        }
+
+
+                                        counter.textContent =
+                                            current.toLocaleString();
+
+                                    },
+                                    20
+                                );
+
+
+                            counterObserver.unobserve(
+                                counter
+                            );
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.6
+                }
+            );
+
+
+        counters.forEach(
+            function (counter) {
+
+                counterObserver.observe(
+                    counter
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================================
+       CONTACT FORM - FORMSPREE
+    ========================================= */
+
+    const contactForm =
+        document.getElementById(
+            "contactForm"
+        );
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+
+                const name =
+                    document.getElementById(
+                        "contactName"
+                    );
+
+
+                const email =
+                    document.getElementById(
+                        "contactEmail"
+                    );
+
+
+                const subject =
+                    document.getElementById(
+                        "contactSubject"
+                    );
+
+
+                const message =
+                    document.getElementById(
+                        "contactMessage"
+                    );
+
+
+                const nameError =
+                    document.getElementById(
+                        "contactNameError"
+                    );
+
+
+                const emailError =
+                    document.getElementById(
+                        "contactEmailError"
+                    );
+
+
+                const messageError =
+                    document.getElementById(
+                        "contactMessageError"
+                    );
+
+
+                /* Clear old errors */
+
+                clearContactErrors();
+
+
+                let valid = true;
+
+
+
+                /* =================================
+                   NAME VALIDATION
+                ================================== */
+
+                if (
+                    !name ||
+                    name.value.trim().length < 2
+                ) {
+
+                    event.preventDefault();
+
+                    name.classList.add(
+                        "input-error"
+                    );
+
+
+                    if (nameError) {
+
+                        nameError.textContent =
+                            "Please enter your name.";
+
+                    }
+
+
+                    valid = false;
+
+                }
+
+
+
+                /* =================================
+                   EMAIL VALIDATION
+                ================================== */
+
+                if (
+                    !email ||
+                    !isValidEmail(
+                        email.value.trim()
+                    )
+                ) {
+
+                    event.preventDefault();
+
+                    email.classList.add(
+                        "input-error"
+                    );
+
+
+                    if (emailError) {
+
+                        emailError.textContent =
+                            "Please enter a valid email address.";
+
+                    }
+
+
+                    valid = false;
+
+                }
+
+
+
+                /* =================================
+                   SUBJECT VALIDATION
+                ================================== */
+
+                if (
+                    !subject ||
+                    subject.value.trim().length < 2
+                ) {
+
+                    event.preventDefault();
+
+                    if (subject) {
+
+                        subject.classList.add(
+                            "input-error"
+                        );
+
+                    }
+
+
+                    valid = false;
+
+                }
+
+
+
+                /* =================================
+                   MESSAGE VALIDATION
+                ================================== */
+
+                if (
+                    !message ||
+                    message.value.trim().length < 10
+                ) {
+
+                    event.preventDefault();
+
+                    message.classList.add(
+                        "input-error"
+                    );
+
+
+                    if (messageError) {
+
+                        messageError.textContent =
+                            "Message must contain at least 10 characters.";
+
+                    }
+
+
+                    valid = false;
+
+                }
+
+
+
+                /* =================================
+                   FORM SUBMISSION
+                ================================== */
+
+                if (valid) {
+
+                    /*
+                     * IMPORTANT:
+                     *
+                     * We intentionally DO NOT use
+                     * event.preventDefault() here.
+                     *
+                     * Formspree needs the browser
+                     * to submit the form normally.
+                     */
+
+
+                    const button =
+                        document.getElementById(
+                            "contactSubmitBtn"
+                        );
+
+
+                    if (button) {
+
+                        button.textContent =
+                            "Sending...";
+
+                        button.disabled = true;
+
+                        button.classList.add(
+                            "opacity-70",
+                            "cursor-not-allowed"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+    }
+
 
 
     /* =========================================
        SIGN UP FORM
-       ========================================= */
+    ========================================= */
 
     const signupForm =
-        document.getElementById("signupForm");
+        document.getElementById(
+            "signupForm"
+        );
+
 
     if (signupForm) {
 
@@ -211,23 +544,42 @@
 
                 let valid = true;
 
+
                 const name =
-                    document.getElementById("fullName");
+                    document.getElementById(
+                        "fullName"
+                    );
+
 
                 const email =
-                    document.getElementById("signupEmail");
+                    document.getElementById(
+                        "signupEmail"
+                    );
+
 
                 const phone =
-                    document.getElementById("phone");
+                    document.getElementById(
+                        "phone"
+                    );
+
 
                 const password =
-                    document.getElementById("signupPassword");
+                    document.getElementById(
+                        "signupPassword"
+                    );
+
 
                 const confirmPassword =
-                    document.getElementById("confirmPassword");
+                    document.getElementById(
+                        "confirmPassword"
+                    );
+
 
                 const terms =
-                    document.getElementById("terms");
+                    document.getElementById(
+                        "terms"
+                    );
+
 
 
                 /* Name */
@@ -244,14 +596,18 @@
                     );
 
                     valid = false;
+
                 }
+
 
 
                 /* Email */
 
                 if (
                     !email ||
-                    !isValidEmail(email.value.trim())
+                    !isValidEmail(
+                        email.value.trim()
+                    )
                 ) {
 
                     showError(
@@ -261,7 +617,9 @@
                     );
 
                     valid = false;
+
                 }
+
 
 
                 /* Phone */
@@ -281,7 +639,9 @@
                     );
 
                     valid = false;
+
                 }
+
 
 
                 /* Password */
@@ -298,14 +658,17 @@
                     );
 
                     valid = false;
+
                 }
+
 
 
                 /* Confirm Password */
 
                 if (
                     !confirmPassword ||
-                    confirmPassword.value !== password.value
+                    confirmPassword.value !==
+                    password.value
                 ) {
 
                     showError(
@@ -315,7 +678,9 @@
                     );
 
                     valid = false;
+
                 }
+
 
 
                 /* Terms */
@@ -330,7 +695,9 @@
                     );
 
                     valid = false;
+
                 }
+
 
 
                 /* Success */
@@ -342,37 +709,50 @@
                             "signupSuccess"
                         );
 
+
                     if (success) {
 
                         success.textContent =
                             "Account created successfully!";
 
-                        success.classList.add("show");
+                        success.classList.add(
+                            "show"
+                        );
 
                     }
 
+
                     signupForm.reset();
 
-                    setTimeout(function () {
 
-                        window.location.href =
-                            "signin.html";
+                    setTimeout(
+                        function () {
 
-                    }, 1800);
+                            window.location.href =
+                                "signin.html";
+
+                        },
+                        1800
+                    );
 
                 }
 
             }
         );
+
     }
+
 
 
     /* =========================================
        SIGN IN FORM
-       ========================================= */
+    ========================================= */
 
     const signinForm =
-        document.getElementById("signinForm");
+        document.getElementById(
+            "signinForm"
+        );
+
 
     if (signinForm) {
 
@@ -386,8 +766,12 @@
 
                 let valid = true;
 
+
                 const email =
-                    document.getElementById("signinEmail");
+                    document.getElementById(
+                        "signinEmail"
+                    );
+
 
                 const password =
                     document.getElementById(
@@ -395,9 +779,14 @@
                     );
 
 
+
+                /* Email */
+
                 if (
                     !email ||
-                    !isValidEmail(email.value.trim())
+                    !isValidEmail(
+                        email.value.trim()
+                    )
                 ) {
 
                     showError(
@@ -407,8 +796,12 @@
                     );
 
                     valid = false;
+
                 }
 
+
+
+                /* Password */
 
                 if (
                     !password ||
@@ -422,8 +815,12 @@
                     );
 
                     valid = false;
+
                 }
 
+
+
+                /* Success */
 
                 if (valid) {
 
@@ -432,12 +829,15 @@
                             "signinSuccess"
                         );
 
+
                     if (success) {
 
                         success.textContent =
                             "Sign in successful! Welcome back.";
 
-                        success.classList.add("show");
+                        success.classList.add(
+                            "show"
+                        );
 
                     }
 
@@ -445,12 +845,14 @@
 
             }
         );
+
     }
 
 
+
     /* =========================================
-       EMAIL VALIDATION
-       ========================================= */
+       EMAIL VALIDATION FUNCTION
+    ========================================= */
 
     function isValidEmail(email) {
 
@@ -461,9 +863,10 @@
     }
 
 
+
     /* =========================================
        SHOW ERROR
-       ========================================= */
+    ========================================= */
 
     function showError(
         input,
@@ -479,55 +882,140 @@
 
         }
 
+
         const error =
-            document.getElementById(errorId);
+            document.getElementById(
+                errorId
+            );
+
 
         if (error) {
 
-            error.textContent = message;
+            error.textContent =
+                message;
 
         }
 
     }
 
 
+
     /* =========================================
-       CLEAR ERRORS
-       ========================================= */
+       CLEAR ALL ERRORS
+    ========================================= */
 
     function clearErrors() {
 
         document
-            .querySelectorAll(".error-message")
-            .forEach(function (element) {
+            .querySelectorAll(
+                ".error-message"
+            )
+            .forEach(
+                function (element) {
 
-                element.textContent = "";
+                    element.textContent =
+                        "";
 
-            });
-
-
-        document
-            .querySelectorAll(".form-input")
-            .forEach(function (input) {
-
-                input.classList.remove(
-                    "input-error"
-                );
-
-            });
+                }
+            );
 
 
         document
-            .querySelectorAll(".success-message")
-            .forEach(function (element) {
+            .querySelectorAll(
+                ".form-input"
+            )
+            .forEach(
+                function (input) {
 
-                element.classList.remove(
-                    "show"
-                );
+                    input.classList.remove(
+                        "input-error"
+                    );
 
-                element.textContent = "";
+                }
+            );
 
-            });
+
+        document
+            .querySelectorAll(
+                ".success-message"
+            )
+            .forEach(
+                function (element) {
+
+                    element.classList.remove(
+                        "show"
+                    );
+
+                    element.textContent =
+                        "";
+
+                }
+            );
+
+    }
+
+
+
+    /* =========================================
+       CLEAR CONTACT ERRORS
+    ========================================= */
+
+    function clearContactErrors() {
+
+        const fields = [
+            "contactName",
+            "contactEmail",
+            "contactSubject",
+            "contactMessage"
+        ];
+
+
+        fields.forEach(
+            function (id) {
+
+                const input =
+                    document.getElementById(
+                        id
+                    );
+
+
+                if (input) {
+
+                    input.classList.remove(
+                        "input-error"
+                    );
+
+                }
+
+            }
+        );
+
+
+        const errors = [
+            "contactNameError",
+            "contactEmailError",
+            "contactMessageError"
+        ];
+
+
+        errors.forEach(
+            function (id) {
+
+                const error =
+                    document.getElementById(
+                        id
+                    );
+
+
+                if (error) {
+
+                    error.textContent =
+                        "";
+
+                }
+
+            }
+        );
 
     }
 
